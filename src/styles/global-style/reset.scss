@@ -1,0 +1,180 @@
+@use "normalize";
+@use "../variables/fonts" as f;
+@use "../mixins/font" as *;
+@use "../variables/breakpoints" as *;
+@use "../variables/colors" as *;
+
+
+:root {
+  //box-sizing: border-box;
+
+  --coef-indent: 1; // for margin and padding
+  --coef-title: 1; // for title font-size
+  --coef-text: 1; // for regular text which size less than 20px font-size
+  --coef-size: 1; // for element width, height
+  --column-width: 100vw / 64; // column width
+
+  @media screen and (min-width: 1600px) {
+    --coef-indent: 1.25;
+    --coef-title: 1.25;
+    --coef-text: 1.25;
+    --coef-size: 1.25;
+  }
+  @media screen and (max-width: 1024px) {
+    --coef-title: 0.9;
+    --coef-text: 0.9;
+  }
+  @media screen and (max-width: $md) {
+    --coef-indent: 0.7;
+    --coef-title: 0.8;
+    --coef-size: 0.8;
+  }
+  @media screen and (max-width: $sm) {
+    --coef-indent: 0.5;
+    --coef-title: 0.6;
+    --coef-size: 0.7;
+  }
+
+  /*  fonts variables ------------------------------------------------    */
+  --sofia-pro-soft: 'SofiaProSoft', sans-serif;
+  --sofia-pro: 'Sofia Pro';
+  --gramatika: 'Gramatika', sans-serif;
+
+  // fot weight
+  --fw-extra-light: 200;
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+  --fw-extra-bold: 900;
+
+
+  /* background variables -----------------------------------------------    */
+  --bg-body: white;
+  --bg-section: #F7F7FB;
+
+  --bg-card-100: #22222C;
+  --bg-card-200: #1F1F29;
+  --bg-card-300: #191922;
+
+  /*   Text variables  ----------------------------------------------- */
+  --txt-normal: #1C1C24;
+  --txt-100: #63666F;
+
+
+  /*   Icon variables    -----------------------------------------------   */
+  --icon-light: #5C637C;
+  --icon-dark: #3C4358;
+
+
+  /*   Border variables    -----------------------------------------------   */
+  --border-200: #3C4251;
+  --border-300: #333848;
+  --border-400: #2A2B37;
+
+
+  // when it have data-theme="dark"
+  &[data-theme="dark"] {
+
+    /*   Background variables      */
+    --bg-body: #131313;
+    --bg-section: #1C1C24;
+
+    --bg-card-200: #1F1F29;
+    --bg-card-300: #1a1a23;
+    --bg-card-400: #191922;
+
+    --bg-btn-100: #2b2f3b;
+
+
+    /*   Text variables      */
+    --txt-100: #ADB6D7;
+    --txt-normal: #838BA8;
+    --txt-300: #808391;
+    --txt-400: #63666F;
+
+    /*  Accent clrs */
+    --accent-main: #00D094;
+
+  }
+
+
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-size: 18px;
+  font-family: var(--sofia-pro);
+  //font-weight: 900;
+
+
+  @include fluid-type(1920px, 5120px, 18px, 20px);
+
+  @media screen and (max-width: 1920px) {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 1720px) {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 1400px) {
+    //font-size: 14px;
+    font-size: 11.25px;
+  }
+  @media screen and (max-width: 1200px) {
+    font-size: 9px;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+
+}
+
+
+body {
+  position: relative;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  .filepond--root {
+    font-family: var(--sofia-pro-soft);
+  }
+
+  //overflow: hidden;
+
+  * {
+    //border: 1px solid red;
+  }
+}
+
+
+* {
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

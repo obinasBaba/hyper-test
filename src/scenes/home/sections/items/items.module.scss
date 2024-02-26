@@ -1,0 +1,152 @@
+@use '@/styles/index' as s;
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  gap: 2rem;
+  padding: .5rem;
+
+  overflow: hidden;
+
+  @include s.media-breakpoint-up(md) {
+    flex-flow: row;
+  }
+
+  .nav_title {
+    flex-flow: row;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    justify-content: space-between;
+
+    @include s.media-breakpoint-up(md) {
+      align-items: initial;
+      flex-flow: column;
+      max-width: 12rem;
+
+      //border: 1px solid #000;
+    }
+
+
+    //border: 1px solid #000;
+
+    .title {
+      // show ellipsis if the text is more than two lines
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 90%;
+
+      @include s.media-breakpoint-down(md){
+        font-weight: var(--fw-extra-bold);
+        font-size: 1.4rem;
+      }
+
+    }
+
+    .nav {
+      margin-top: auto;
+      display: none;
+
+      @include s.media-breakpoint-up(md) {
+        display: flex;
+      }
+    }
+
+  }
+
+  .swiper {
+    width: 100%;
+    flex: 1;
+
+    //border: 1px solid red;
+
+
+    @include s.media-breakpoint-down(md) {
+
+      & :global {
+        .swiper-wrapper {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+        }
+      }
+    }
+
+
+    .slide {
+      position: relative;
+      width: 1fr;
+
+      @include s.media-breakpoint-up(md) {
+        width: max-content;
+      }
+
+      .product_card {
+        width: 100%;
+        gap: .5rem;
+
+        @include s.media-breakpoint-up(md) {
+          width: 12rem;
+        }
+
+        .img_wrap {
+          position: relative;
+          //width: 100%;
+          //height: 100%;
+          border: 1px solid #f3f3f3;
+          border-radius: .5rem;
+          overflow: hidden;
+          width: 100%;
+          height: 10rem;
+
+          .some {
+            position: absolute;
+            bottom: .5rem;
+            left: .5rem;
+            padding: .2rem;
+            border-radius: .3rem;
+            color: white;
+            background-color: var(--accent-main);
+
+          }
+
+          img {
+            display: block;
+            object-fit: cover;
+          }
+        }
+
+        .p_title {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .price_detail {
+          align-items: center;
+          flex-flow: row;
+          justify-content: space-between;
+          padding: 0 .3rem;
+        }
+
+        .rating {
+          font-size: .8rem;
+          color: gray;
+
+          svg {
+            font-size: 1rem;
+            margin-bottom: .3rem;
+          }
+        }
+      }
+    }
+
+  }
+
+}

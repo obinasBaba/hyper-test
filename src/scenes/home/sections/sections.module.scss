@@ -1,0 +1,20 @@
+@use '@/styles/index' as s;
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 3.5rem;
+
+  margin-top: 3rem;
+
+  .category {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+}

@@ -1,0 +1,25 @@
+@use '@/styles/index.scss' as s;
+
+.container {
+  width: 100%;
+  margin-top: 4.6rem;
+
+  .loading {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+  }
+
+  .wrapper {
+    padding: 1rem;
+    max-width: 980px;
+    width: 100%;
+    margin: 3rem auto;
+    display: flex;
+    flex-flow: column;
+    gap: 2rem;
+
+
+  }
+}

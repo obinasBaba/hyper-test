@@ -1,0 +1,98 @@
+@use 'src/styles' as s;
+
+
+.layout {
+  //display: flex;
+  min-height: 100%;
+
+  .top_nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid #eeeeee;
+    z-index: 100;
+    background-color: white;
+
+    .wrapper {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .5rem 1rem;
+
+      @include s.media-breakpoint-up(md) {
+        padding: 1rem;
+      }
+      //gap: .4rem;
+
+
+      .search_field {
+        width: 100%;
+        max-width: 22rem;
+      }
+
+      .search {
+        display: block;
+
+        @include s.media-breakpoint-up(md) {
+          display: none;
+        }
+      }
+
+      .menu_btn, .other_btns, .search_field {
+        display: none;
+
+        @include s.media-breakpoint-up(md) {
+          display: flex;
+        }
+      }
+    }
+
+  }
+
+  .bottom_nav {
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, .4);
+    padding: .2rem 1rem;
+
+    @include s.media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+}
+
+
+.poper_content {
+  width: 100vw;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+
+  & :global {
+
+    .MuiTooltip-tooltip {
+      background-color: var(--icon-dark);
+      margin-left: .3rem !important;
+      font-size: .9rem;
+      //font-weight: var(--fw-light);
+
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
+    }
+
+    .MuiTooltip-arrow {
+      color: var(--icon-dark);
+    }
+  }
+}

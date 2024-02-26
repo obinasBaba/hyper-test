@@ -1,0 +1,37 @@
+@use '@/styles/index' as s;
+
+.container {
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  row-gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  @include s.media-breakpoint-up(md) {
+    display: flex;
+  }
+
+
+  flex-wrap: wrap;
+
+  .category {
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    width: max-content;
+
+
+    .img_wrap {
+      position: relative;
+      width: 4rem;
+      height: 4rem;
+
+      img {
+        display: block;
+      }
+    }
+  }
+
+}
