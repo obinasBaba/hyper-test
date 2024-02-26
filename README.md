@@ -27,15 +27,24 @@
 
 ## What I have used
 
- Next.js:  which enables me to use **server-components** for Banner-section, Product-List-section, and Category-section. I have used  server-components for these sections because these sections are static and do not change frequently. This makes the app faster and more SEO friendly.
+Next.js:  which enables me to use **server-components** for Banner-section, Product-List-section, and Category-section.
+I have used server-components for these sections because these sections are static and do not change frequently. This
+makes the app faster and more SEO friendly.
 
- SCSS : for styling the page sections, and I have used typescript for type safety.
- Framer-motion :  for page transitions.
-
+SCSS : for styling the page sections, and I have used typescript for type safety.
+Framer-motion :  for page transitions.
 
 ## What I will do
-There are a few things that I will do if I will be chosen: 
-- add a search bar, filter, and sort functionality to the product list section.
-- add a product detail page.
-- Use react-Error-Boundary to catch errors in the app.
 
+There are a few things that I will do if I will be chosen:
+
+- add a search bar, filter, and sort functionality to the product list section.
+- Use react-Error-Boundary to catch errors in the app.
+- Make the **Server-Components** dynamic by notifying the server if any new product is added or removed. ( it is
+  hard-cache
+  now)
+
+## Contact - Details
+
+- Name : Henok Getachew
+- Phone : +251923365539
