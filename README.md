@@ -1,13 +1,9 @@
-// describe project structure
-// describe how to run the project
-// describe what I have used in the project
-// describe what I will do if I will be chosen
+// project structure
+// how to run the project
+// what I have used in the project
+// what I will do if I will be chosen
 
 // []: # (README.md)
-// []: # (project-structure)
-// []: # (how-to-run)
-// []: # (what-I-have-used)
-// []: # (what-I-will-do)
 
 ## Project Structure
 
@@ -27,11 +23,12 @@
 
 ## What I have used
 
-Next.js:  which enables me to use **server-components** for Banner-section, Product-List-section, and Category-section.
+Next.js 14 :  which enables me to use **server-components** for Banner-section, Product-List-section, and Category-section.
 I have used server-components for these sections because these sections are static and do not change frequently. This
 makes the app faster and more SEO friendly.
 
 SCSS : for styling the page sections, and I have used typescript for type safety.
+React Suspense : for each sections to be streamed after the main ui delivered
 Framer-motion :  for page transitions.
 
 ## What I will do

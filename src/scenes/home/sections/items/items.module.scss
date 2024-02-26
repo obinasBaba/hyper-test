@@ -32,15 +32,18 @@
     //border: 1px solid #000;
 
     .title {
-      // show ellipsis if the text is more than two lines
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 90%;
 
-      @include s.media-breakpoint-down(md){
+      @include s.media-breakpoint-up(md) {
+        // show ellipsis if the text is more than two lines
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 90%;
+      }
+
+      @include s.media-breakpoint-down(md) {
         font-weight: var(--fw-extra-bold);
         font-size: 1.4rem;
       }
