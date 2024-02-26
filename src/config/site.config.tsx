@@ -1,8 +1,8 @@
 import { type Metadata } from 'next';
-import { type OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 
 import { LAYOUT_OPTIONS } from '@/config/enums';
 import logoImg from '@/public/logo.svg';
+import { type OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 
 enum MODE {
   DARK = 'dark',
@@ -22,7 +22,7 @@ export const siteConfig = {
 export const metaObject = (
   title?: string,
   openGraph?: OpenGraph,
-  description: string = siteConfig.description,
+  description: string = siteConfig.description
 ): Metadata => {
   return {
     title: title ? `${title} - Isomorphic Furyroad` : siteConfig.title,

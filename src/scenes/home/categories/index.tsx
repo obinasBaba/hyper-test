@@ -11,8 +11,7 @@ import Image from 'next/image';
 
 import { Typography } from '@/components/ui';
 import { Stack } from '@/components/ui/stack';
-import { Category } from '@/types';
-
+import { type Category } from '@/types';
 
 interface Props {
   categories: Category[];

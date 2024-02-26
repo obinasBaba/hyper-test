@@ -1,7 +1,7 @@
 import AlertMessage from '@/components/ui/alert';
 import { API_URL } from '@/config/constants';
 import Categories from '@/scenes/home/categories/index';
-import { Category } from '@/types';
+import { type Category } from '@/types';
 
 async function CategoriesContainer() {
   const categories: Category[] = await fetch(API_URL.CATEGORIES_API_URL, {

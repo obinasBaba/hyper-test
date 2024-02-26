@@ -1,7 +1,8 @@
 'use client';
 
-import { IconButton, useMediaQuery } from '@mui/material';
+import { IconButton } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
@@ -9,9 +10,9 @@ import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Stack } from '@/components/ui/stack';
+import { type Banner } from '@/types';
 import s from './hero.module.scss';
 import { ChevronLeft, ChevronRight } from '@mui/icons-material';
-import { Banner } from '@/types';
 
 interface Props {
   bannersData: Banner[];

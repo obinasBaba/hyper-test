@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 
-import { motion, type MotionProps, type Transition } from 'framer-motion';
+import { motion } from 'framer-motion';
+import type { MotionProps, Transition } from 'framer-motion';
 
 type MotionParentPropsType = MotionProps & {
   children: React.ReactNode;
@@ -24,22 +25,20 @@ const basicTransition: Transition = {
   ease: [0.6, 0.01, 0, 0.9],
 };
 
-export const MotionParent = forwardRef<any, MotionParentPropsType>(
-  ({ ...props }, ref) => {
-    return (
-      <motion.div
-        ref={ref}
-        variants={basicVariants}
-        transition={basicTransition}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        {...props}
-      >
-        {props.children}
-      </motion.div>
-    );
-  },
-);
+export const MotionParent = forwardRef<any, MotionParentPropsType>(({ ...props }, ref) => {
+  return (
+    <motion.div
+      ref={ref}
+      variants={basicVariants}
+      transition={basicTransition}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      {...props}
+    >
+      {props.children}
+    </motion.div>
+  );
+});
 
 MotionParent.displayName = 'PageTransitionContainer';

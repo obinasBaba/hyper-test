@@ -1,6 +1,7 @@
-import React, { type ComponentProps } from 'react';
+import React from 'react';
 
 import { motion } from 'framer-motion';
+import type { ComponentProps } from 'react';
 
 const basicVariants = {
   initial: {
@@ -21,19 +22,12 @@ export const basicTransition = {
 
 type Props = ComponentProps<typeof motion.div>;
 
-export const MotionChild = React.forwardRef(
-  (props: Props, ref: React.ForwardedRef<HTMLDivElement>) => {
-    return (
-      <motion.div
-        variants={basicVariants}
-        transition={basicTransition}
-        ref={ref}
-        {...props}
-      >
-        {props.children}
-      </motion.div>
-    );
-  },
-);
+export const MotionChild = React.forwardRef((props: Props, ref: React.ForwardedRef<HTMLDivElement>) => {
+  return (
+    <motion.div variants={basicVariants} transition={basicTransition} ref={ref} {...props}>
+      {props.children}
+    </motion.div>
+  );
+});
 
 MotionChild.displayName = 'MotionChild';

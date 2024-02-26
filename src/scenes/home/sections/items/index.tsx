@@ -16,9 +16,8 @@ import { Autoplay, Navigation } from 'swiper/modules';
 
 import { Typography } from '@/components/ui';
 import { Stack } from '@/components/ui/stack';
+import { type ItemsType } from '@/types';
 import { ChevronLeft, ChevronRight, Star } from '@mui/icons-material';
-import { ItemsType } from '@/types';
-
 
 interface Props {
   sectionData: ItemsType;

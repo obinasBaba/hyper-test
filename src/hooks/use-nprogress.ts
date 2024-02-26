@@ -1,7 +1,6 @@
-import { useEffect } from 'react';
-
 import Router from 'next/router';
 import nProgress from 'nprogress';
+import { useEffect } from 'react';
 
 // import nProgress from 'nextjs-progressbar';
 

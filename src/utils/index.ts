@@ -1,6 +1,5 @@
-import { useCallback, useEffect, useRef } from 'react';
-
 import Router from 'next/router';
+import { useCallback, useEffect, useRef } from 'react';
 
 export const wrap = (min: number, max: number, v: number) => {
   const rangeSize = max - min;
@@ -21,9 +20,7 @@ export const useTransitionFix = (): Cleanup => {
       // Create a clone of every <style> and <link> that currently affects the page. It doesn't
       // matter if Next.js is going to remove them or not since we are going to remove the copies
       // ourselves later on when the transition finishes.
-      const nodes = document.querySelectorAll(
-        'link[rel=stylesheet], style:not([media=x])',
-      );
+      const nodes = document.querySelectorAll('link[rel=stylesheet], style:not([media=x])');
       const copies = [...nodes].map((el) => el.cloneNode(true) as HTMLElement);
 
       for (const copy of copies) {

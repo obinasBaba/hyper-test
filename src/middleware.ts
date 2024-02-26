@@ -1,5 +1,7 @@
 import * as jose from 'jose';
-import { type NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
+
+import type { NextRequest } from 'next/server';
 
 const secret: any = process.env.JWT_SECRET;
 
@@ -29,9 +31,7 @@ export async function middleware(request: NextRequest) {
 
   if (request.nextUrl.pathname.startsWith('/auth') && token?.accountType) {
     if (token?.accountType === 'APPLICANT') {
-      return NextResponse.redirect(
-        new URL('/applicant/dashboard', request.url),
-      );
+      return NextResponse.redirect(new URL('/applicant/dashboard', request.url));
     }
 
     if (token?.accountType === 'COMPANY') {
@@ -43,9 +43,7 @@ export async function middleware(request: NextRequest) {
 
   if (request.nextUrl.pathname === '/' && token?.id) {
     if (token?.accountType === 'APPLICANT') {
-      return NextResponse.redirect(
-        new URL('/applicant/dashboard', request.url),
-      );
+      return NextResponse.redirect(new URL('/applicant/dashboard', request.url));
     }
 
     if (token?.accountType === 'COMPANY') {
@@ -53,17 +51,11 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  if (
-    request.nextUrl.pathname.startsWith('/applicant') &&
-    token?.accountType !== 'APPLICANT'
-  ) {
+  if (request.nextUrl.pathname.startsWith('/applicant') && token?.accountType !== 'APPLICANT') {
     return NextResponse.redirect(new URL('/404', request.url));
   }
 
-  if (
-    request.nextUrl.pathname.startsWith('/company') &&
-    token?.accountType !== 'COMPANY'
-  ) {
+  if (request.nextUrl.pathname.startsWith('/company') && token?.accountType !== 'COMPANY') {
     return NextResponse.redirect(new URL('/404', request.url));
   }
 
@@ -72,14 +64,7 @@ export async function middleware(request: NextRequest) {
 
 // See "Matching Paths" below to learn more
 export const config = {
-  matcher: [
-    '/',
-    '/applicant/:path*',
-    '/company/:path*',
-    '/auth/login',
-    '/auth/register',
-    '/activate/:path*',
-  ],
+  matcher: ['/', '/applicant/:path*', '/company/:path*', '/auth/login', '/auth/register', '/activate/:path*'],
 };
 
 // See "Matching Paths" below to learn more

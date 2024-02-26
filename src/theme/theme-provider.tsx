@@ -10,7 +10,6 @@ import { useState } from 'react';
 
 import theme from './theme-simple';
 
-
 // This implementation is from emotion-js
 // https://github.com/emotion-js/emotion/issues/2928#issuecomment-1319747902
 export default function ThemeProvider(props: any) {
